@@ -4,6 +4,7 @@
 .env*.local
 output
 dist
+target
 .idea
 node_modules
 package-lock.json
@@ -11,4 +12,7 @@ pnpm-lock.yaml
 .vercel
 private
 private.*
+private-*
 past.*
+past-*
+scripts/run.ts
