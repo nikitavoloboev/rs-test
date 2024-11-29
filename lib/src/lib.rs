@@ -1,19 +1,21 @@
+use log_macro::log;
+
 // - enums
-enum CarType {
+pub enum CarType {
     Hatch,
     Sedan,
     SUV,
 }
-fn print_size(car: CarType) {
+pub fn print_size(car: CarType) {
     match car {
         CarType::Hatch => {
-            println!("Small sized car");
+            log!("Small sized car");
         }
         CarType::Sedan => {
-            println!("Medium sized car");
+            log!("Medium sized car");
         }
         CarType::SUV => {
-            println!("Large sized Sports Utility car");
+            log!("Large sized Sports Utility car");
         }
     }
 }
@@ -21,7 +23,14 @@ fn print_size(car: CarType) {
 #[cfg(test)]
 mod tests {
     use super::*;
-
+    #[test]
+    fn run() {
+        fn plus_one(x: i32) -> i32 {
+            x + 1
+        }
+        let x = plus_one(8);
+        log!(x);
+    }
     #[test]
     fn enums() {
         print_size(CarType::SUV);
